@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette */
+  --black: #0a0804;
+  --deep: #110f0a;
+  --gold: #c9a84c;
+  --gold-light: #e8c96e;
+  --gold-dark: #7a6230;
+  --earth: #8b4513;
+  --earth-light: #b5651d;
+  --earth-pale: #d4956a;
+  --cream: #f0e6d3;
+  --ash: #1e1a15;
+  --ash-light: #2a2520;
+  
+  /* Design tokens */
+  --background: var(--black);
+  --foreground: var(--cream);
+  --muted: var(--ash);
+  --muted-foreground: rgba(240, 230, 211, 0.55);
+  --accent: var(--gold);
+  --accent-foreground: var(--black);
+  --border: rgba(201, 168, 76, 0.1);
+  --radius: 0rem;
+}
+
+@theme inline {
+  --font-sans: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cinzel", serif;
+  --font-display: "Cinzel Decorative", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 2px;
+}
+
+/* Noise texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* Animation keyframes */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.06) translateX(0);
+  }
+  to {
+    transform: scale(1.1) translateX(-1.5%);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(var(--dx));
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleY(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-fade {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes load-fill {
+  to {
+    width: 100%;
+  }
+}
+
+/* Utility classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+.text-gold-dark {
+  color: var(--gold-dark);
+}
+
+.text-earth {
+  color: var(--earth);
+}
+
+.text-earth-pale {
+  color: var(--earth-pale);
+}
+
+.text-cream {
+  color: var(--cream);
+}
+
+.bg-black-deep {
+  background: var(--black);
+}
+
+.bg-deep {
+  background: var(--deep);
+}
+
+.bg-ash {
+  background: var(--ash);
+}
+
+/* Gradient text utility */
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--gold-light) 0%,
+    var(--gold) 40%,
+    var(--earth-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
