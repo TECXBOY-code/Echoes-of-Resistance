@@ -4,13 +4,14 @@ export function ClosingSection() {
   return (
     <section
       id="closing"
-      className="px-8 py-36 text-center"
+      className="py-36 text-center"
       style={{
         background:
           "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(139, 69, 19, 0.07), transparent 70%), var(--black)",
       }}
     >
-      <blockquote
+      <div className="mx-auto max-w-[1100px] px-8">
+        <blockquote
         className="mx-auto mb-10 max-w-[720px] font-light italic leading-relaxed opacity-[0.92]"
         style={{
           fontFamily: "var(--font-cormorant), serif",
@@ -38,6 +39,7 @@ export function ClosingSection() {
         every person who chooses to remember, research, and refuse the version of
         history that erases the people who were here first.
       </p>
+      </div>
     </section>
   );
 }

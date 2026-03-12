@@ -11,7 +11,7 @@ export function Footer() {
         }}
       />
       <footer
-        className="flex flex-wrap items-center justify-between gap-4 px-12 py-10"
+        className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-4 px-8 py-10 md:justify-between"
         style={{ borderTop: "1px solid rgba(201, 168, 76, 0.08)" }}
       >
         <div

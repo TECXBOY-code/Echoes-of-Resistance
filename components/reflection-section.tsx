@@ -23,29 +23,30 @@ export function ReflectionSection() {
   return (
     <section
       id="reflection"
-      className="px-8 py-32 text-center"
+      className="py-32 text-center"
       style={{
         background: "linear-gradient(135deg, var(--deep) 0%, rgba(30, 18, 8, 0.8) 100%)",
       }}
     >
-      <SectionLabel>Your Voice</SectionLabel>
-      <h2
-        className="mb-8 text-[clamp(1.5rem,3.5vw,2.8rem)] leading-snug"
-        style={{
-          fontFamily: "var(--font-cinzel-decorative), serif",
-          color: "var(--gold-light)",
-        }}
-      >
-        What Will You Remember?
-      </h2>
-      <p
-        className="mx-auto mb-14 max-w-[650px] text-lg italic leading-8 opacity-80"
-        style={{ color: "var(--cream)" }}
-      >
-        History lives when people choose to carry it forward. You have walked
-        through Sierra Leone&apos;s story of resistance. What stays with you? What
-        do you want to say?
-      </p>
+      <div className="mx-auto max-w-[1100px] px-8">
+        <SectionLabel>Your Voice</SectionLabel>
+        <h2
+          className="mx-auto mb-8 text-center text-[clamp(1.5rem,3.5vw,2.8rem)] leading-snug"
+          style={{
+            fontFamily: "var(--font-cinzel-decorative), serif",
+            color: "var(--gold-light)",
+          }}
+        >
+          What Will You Remember?
+        </h2>
+        <p
+          className="mx-auto mb-14 max-w-[650px] text-center text-lg italic leading-8 opacity-80"
+          style={{ color: "var(--cream)" }}
+        >
+          History lives when people choose to carry it forward. You have walked
+          through Sierra Leone&apos;s story of resistance. What stays with you? What
+          do you want to say?
+        </p>
 
       <div className="mx-auto max-w-[600px]">
         <textarea
@@ -91,6 +92,7 @@ export function ReflectionSection() {
             {reflection}
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

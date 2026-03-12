@@ -41,7 +41,7 @@ export function SectionLabel({ children, isVisible = true }: SectionProps) {
 export function SectionTitle({ children, isVisible = true }: SectionProps) {
   return (
     <h2
-      className={`mb-6 text-[clamp(1.8rem,4vw,3rem)] leading-tight transition-all duration-700 delay-100 ${
+      className={`mx-auto mb-6 text-center text-[clamp(1.8rem,4vw,3rem)] leading-tight transition-all duration-700 delay-100 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
       style={{
@@ -61,7 +61,7 @@ export function SectionIntro({
 }: SectionProps) {
   return (
     <p
-      className={`max-w-[680px] text-lg italic leading-relaxed transition-all duration-700 delay-200 ${
+      className={`mx-auto max-w-[680px] text-center text-lg italic leading-relaxed transition-all duration-700 delay-200 ${
         centered ? "mx-auto" : ""
       } ${isVisible ? "translate-y-0 opacity-70" : "translate-y-6 opacity-0"}`}
       style={{ color: "var(--cream)" }}
