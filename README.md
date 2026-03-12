@@ -22,4 +22,4 @@ You can open the file directly in a browser:
   or  
 - Serve it with any static server:
 
-npx serve .
+npx serve and also
